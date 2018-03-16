@@ -1,0 +1,46 @@
+﻿@model AvaliaSim.Repository.Avaliacao
+@{
+    ViewBag.Title = "Qualidade";
+}
+<h2>Editar amigo</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+
+        <fieldset data-role="controlgroup">
+            <div>
+                <input type="hidden" id="teste" name="recebeTipo" value="@Model.tipo">
+                <input type="radio" name="recebeOpcao" id="radio-choice-v-2a" value="1">
+                <label for="radio-choice-v-2a">Bom</label>
+            </div>
+
+            <div>
+                <input type="hidden" id="teste2" name="recebeTipo" value="@Model.tipo">
+                <input type="radio" name="recebeOpcao" id="radio-choice-v-2b" value="2">
+                <label for="radio-choice-v-2b">Neutro</label>
+            </div>
+
+            <div>
+                <input type="hidden" id="teste3" name="recebeTipo" value="@Model.tipo">
+                <input type="radio" name="recebeOpcao" id="radio-choice-v-2c" value="3">
+                <label for="radio-choice-v-2c">Ruim</label>
+            </div>
+        </fieldset>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

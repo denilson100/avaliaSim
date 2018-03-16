@@ -1,0 +1,38 @@
+﻿@model IEnumerable<AvaliaSim.Repository.Avaliacao>
+@{
+    /**/
+
+    ViewBag.Title = "Lista de Avaliações";
+}
+<h2>Lista de Avaliações</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            CheckBox
+        </th>
+        <th>
+            Nome Completo
+        </th>
+        <th>
+            E-mail
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome) @Html.DisplayFor(modelItem => item.SobreNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
