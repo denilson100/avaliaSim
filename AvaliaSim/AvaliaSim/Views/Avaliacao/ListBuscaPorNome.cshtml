@@ -4,70 +4,93 @@
 
     ViewBag.Title = "Lista de Avaliações";
 }
-<h2>Lista de Avaliações</h2>
+<h2 style="margin-top: 100px;">Lista de Avaliações</h2>
 
 
 @foreach (var item in Model)
 {
     if (item.tipo == "Serviço")
     {
-            <!-- Servico -->
-        <ul class="list-group">
-            <li class="list-group-item">
-                <p><strong>@Html.DisplayFor(modelItem => item.nome)</strong></p>
-                <p>@Html.DisplayFor(modelItem => item.cidade) - @Html.DisplayFor(modelItem => item.estado)</p>
-            </li>
-            <li class="list-group-item justify-content-between">
-                Atendimento
-                <span class="badge badge-default badge-pill">@Html.DisplayFor(modelItem => item.servAtendimento)</span>
-            </li>
-            <li class="list-group-item justify-content-between">
-                Agilidade
-                <span class="badge badge-default badge-pill">@Html.DisplayFor(modelItem => item.servAgilidade)</span>
-            </li>
-            <li class="list-group-item justify-content-between">
-                Satisfação
-                <span class="badge badge-default badge-pill">@Html.DisplayFor(modelItem => item.servsatisfacao)</span>
-            </li>
-            <li class="list-group-item justify-content-between">
-                Total Avaliações
-                <span class="badge badge-default badge-pill">@Html.DisplayFor(modelItem => item.totalAvaliacoes)</span>
-            </li>
 
-            <td>
-                @Html.ActionLink("Avaliar", "Redirect", new { id = item.Id })
-            </td>
-        </ul>
+
+            <!-- Servico -->
+
+        <div class="card col-md-3" style=" float:left;">
+
+
+            <!-- List Group -->
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="background: #ccc;">
+                    <strong>@Html.DisplayFor(modelItem => item.nome)</strong><br />
+                    @Html.DisplayFor(modelItem => item.cidade) - @Html.DisplayFor(modelItem => item.estado)<br />
+                    <span>Criado em: </span>@Html.DisplayFor(modelItem => item._data)
+                </li>
+
+                <li class="list-group-item">
+                    Atendimento
+                    <span class="badge badge-default badge-pill" style="background: #004B47; color: #fff;">@Html.DisplayFor(modelItem => item.servAtendimento)</span>
+                </li>
+                <li class="list-group-item">
+                    Agilidade
+                    <span class="badge badge-default badge-pill">@Html.DisplayFor(modelItem => item.servAgilidade)</span>
+                </li>
+                <li class="list-group-item">
+                    Satisfação
+                    <span class="badge badge-default badge-pill">@Html.DisplayFor(modelItem => item.servsatisfacao)</span>
+                </li>
+                <li class="list-group-item">
+                    Total Avaliações
+                    <span class="badge badge-default badge-pill">@Html.DisplayFor(modelItem => item.totalAvaliacoes)</span>
+                </li>
+                <button class="btn btn-lg btn-block">
+                    @Html.ActionLink("Avaliar", "Redirect", new { id = item.Id })
+
+                </button>
+
+            </ul>
+
+        </div>
+
     }
     if (item.tipo == "Produto")
     {
             <!-- Produto -->
-        <ul class="list-group">
-            <li class="list-group-item">
-                <p><strong>@Html.DisplayFor(modelItem => item.nome)</strong></p>
-                <p>@Html.DisplayFor(modelItem => item.cidade) - @Html.DisplayFor(modelItem => item.estado)</p>
-            </li>
-            <li class="list-group-item justify-content-between">
-                Qualidade
-                <span class="badge badge-default badge-pill">@Html.DisplayFor(modelItem => item.prodQualidade)</span>
-            </li>
-            <li class="list-group-item justify-content-between">
-                Custo Beneficio
-                <span class="badge badge-default badge-pill">@Html.DisplayFor(modelItem => item.prodCusto_beneficio)</span>
-            </li>
-            <li class="list-group-item justify-content-between">
-                Satisfação
-                <span class="badge badge-default badge-pill">@Html.DisplayFor(modelItem => item.prodSatisfacao)</span>
-            </li>
-            <li class="list-group-item justify-content-between">
-                Total Avaliações
-                <span class="badge badge-default badge-pill">@Html.DisplayFor(modelItem => item.totalAvaliacoes)</span>
-            </li>
 
-            <td>
-                @Html.ActionLink("Avaliar", "Redirect", new { id = item.Id })
-            </td>
-        </ul>
+        <div class="card col-md-3" style="float:left;">
+
+
+            <!-- List Group -->
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="background: #ccc;">
+                    <strong>@Html.DisplayFor(modelItem => item.nome)</strong><br />
+                    @Html.DisplayFor(modelItem => item.cidade) - @Html.DisplayFor(modelItem => item.estado)<br />
+                    <span>Criado em: </span>@Html.DisplayFor(modelItem => item._data)
+                </li>
+                <li class="list-group-item justify-content-between">
+                    Qualidade
+                    <span class="badge badge-default badge-pill">@Html.DisplayFor(modelItem => item.prodQualidade)</span>
+                </li>
+                <li class="list-group-item justify-content-between">
+                    Custo Beneficio
+                    <span class="badge badge-default badge-pill">@Html.DisplayFor(modelItem => item.prodCusto_beneficio)</span>
+                </li>
+                <li class="list-group-item justify-content-between">
+                    Satisfação
+                    <span class="badge badge-default badge-pill">@Html.DisplayFor(modelItem => item.prodSatisfacao)</span>
+                </li>
+                <li class="list-group-item justify-content-between">
+                    Total Avaliações
+                    <span class="badge badge-default badge-pill">@Html.DisplayFor(modelItem => item.totalAvaliacoes)</span>
+                </li>
+                <button class="btn btn-lg btn-block">
+                    @Html.ActionLink("Avaliar", "Redirect", new { id = item.Id })
+
+                </button>
+
+            </ul>
+        </div>
+
+
     }
 
 }

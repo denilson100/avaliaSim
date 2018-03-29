@@ -11,7 +11,9 @@ namespace AvaliaSim.Repository
     {
         SqlConnection connection;
 
-        string strConString = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-AvaliaSim-20180314110252.mdf;Initial Catalog=aspnet-AvaliaSim-20180314110252;Integrated Security=True";
+    //    string strConString = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-AvaliaSim-20180314110252.mdf;Initial Catalog=aspnet-AvaliaSim-20180314110252;Integrated Security=True";
+        string strConString = @"Server=tcp:teste-servidor.database.windows.net,1433;Initial Catalog=testeDB;Persist Security Info=False;User ID=teste;Password=infnet021@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+
 
         public IEnumerable<Avaliacao> GetAllAvaliacoes()
         {

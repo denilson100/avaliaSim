@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Adicionar";
 }
-<h2>Adicionar novo amigo</h2>
+<h2>Criar Avaliação</h2>
 
 @using (Html.BeginForm())
 {
@@ -50,7 +50,7 @@
     </div>
 }
 <div>
-    @Html.ActionLink("Voltar para Home", "Index")
+    @Html.ActionLink("Voltar para Home", "GetAllAvaliacoes")
 </div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

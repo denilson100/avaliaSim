@@ -1,0 +1,9 @@
+
+dominio = Chama o crud
+	Post
+	Avaliar
+	Profile
+infrastructure
+	ProfileRepository
+	AvaliacaoRepository (grava no banco)
+	RepositoryBase
