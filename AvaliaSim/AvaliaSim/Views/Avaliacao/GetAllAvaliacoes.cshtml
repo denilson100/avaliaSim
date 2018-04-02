@@ -11,12 +11,9 @@
 {
     if (item.tipo == "Serviço")
     {
-
-
             <!-- Servico -->
 
         <div class="card col-md-3" style=" float:left;">
-
 
             <!-- List Group -->
             <ul class="list-group list-group-flush">
@@ -28,19 +25,19 @@
 
                 <li class="list-group-item">
                     Atendimento
-                    <span class="badge badge-default badge-pill" style="background: #004B47; color: #fff;">@Html.DisplayFor(modelItem => item.servAtendimento)</span>
+                    <span class="badge badge-default badge-pill" style="@(item.servAtendimento < 0 ? "background:#FF0000" : "background:#004c00"); color: #fff;">@Html.DisplayFor(modelItem => item.servAtendimento)</span>
                 </li>
                 <li class="list-group-item">
                     Agilidade
-                    <span class="badge badge-default badge-pill">@Html.DisplayFor(modelItem => item.servAgilidade)</span>
+                    <span class="badge badge-default badge-pill" style="@(item.servAgilidade < 0 ? "background:#FF0000" : "background:#004c00"); color: #fff;">@Html.DisplayFor(modelItem => item.servAgilidade)</span>
                 </li>
                 <li class="list-group-item">
                     Satisfação
-                    <span class="badge badge-default badge-pill">@Html.DisplayFor(modelItem => item.servsatisfacao)</span>
+                    <span class="badge badge-default badge-pill" style="@(item.servsatisfacao < 0 ? "background:#FF0000" : "background:#004c00"); color: #fff;">@Html.DisplayFor(modelItem => item.servsatisfacao)</span>
                 </li>
                 <li class="list-group-item">
                     Total Avaliações
-                    <span class="badge badge-default badge-pill">@Html.DisplayFor(modelItem => item.totalAvaliacoes)</span>
+                    <span class="badge badge-default badge-pill"style="background:blue;">@Html.DisplayFor(modelItem => item.totalAvaliacoes)</span>
                 </li>
                 <button class="btn btn-lg btn-block">
                     @Html.ActionLink("Avaliar", "Redirect", new { id = item.Id })
@@ -68,19 +65,19 @@
                 </li>
                 <li class="list-group-item justify-content-between">
                     Qualidade
-                    <span class="badge badge-default badge-pill">@Html.DisplayFor(modelItem => item.prodQualidade)</span>
+                    <span class="badge badge-default badge-pill" style="@(item.prodQualidade < 0 ? "background:#FF0000" : "background:#004c00"); color: #fff;">@Html.DisplayFor(modelItem => item.prodQualidade)</span>
                 </li>
                 <li class="list-group-item justify-content-between">
                     Custo Beneficio
-                    <span class="badge badge-default badge-pill">@Html.DisplayFor(modelItem => item.prodCusto_beneficio)</span>
+                    <span class="badge badge-default badge-pill" style="@(item.prodCusto_beneficio < 0 ? "background:#FF0000" : "background:#004c00"); color: #fff;">@Html.DisplayFor(modelItem => item.prodCusto_beneficio)</span>
                 </li>
                 <li class="list-group-item justify-content-between">
                     Satisfação
-                    <span class="badge badge-default badge-pill">@Html.DisplayFor(modelItem => item.prodSatisfacao)</span>
+                    <span class="badge badge-default badge-pill" style="@(item.prodSatisfacao < 0 ? "background:#FF0000" : "background:#004c00"); color: #fff;">@Html.DisplayFor(modelItem => item.prodSatisfacao)</span>
                 </li>
                 <li class="list-group-item justify-content-between">
                     Total Avaliações
-                    <span class="badge badge-default badge-pill">@Html.DisplayFor(modelItem => item.totalAvaliacoes)</span>
+                    <span class="badge badge-default badge-pill"style="background:blue;">@Html.DisplayFor(modelItem => item.totalAvaliacoes)</span>
                 </li>
                 <button class="btn btn-lg btn-block">
                     @Html.ActionLink("Avaliar", "Redirect", new { id = item.Id })
