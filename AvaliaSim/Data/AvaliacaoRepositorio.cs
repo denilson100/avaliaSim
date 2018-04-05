@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,8 +17,8 @@ namespace Data
 
         public AvaliacaoRepositorio()
         {
-           // _connectionString = Data.Properties.Settings.Default.DbConnectionString;
-            _connectionString = @"Server=tcp:teste-servidor.database.windows.net,1433;Initial Catalog=testeDB;Persist Security Info=False;User ID=teste;Password=infnet021@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            // _connectionString = Data.Properties.Settings.Default.DbConnectionString;
+            _connectionString = Data.Properties.Settings.Default.DbConnectionString;
             _sqlConnection = new SqlConnection(_connectionString);
         }
 
@@ -71,7 +72,7 @@ namespace Data
 
         }
 
-        public void AddAvaliacao(Avaliacao avaliacao)
+        public void AddAvaliacao(AddAvaliacao avaliacao)
         {
             DateTime today = DateTime.Today;
             using (SqlConnection con = new SqlConnection(_connectionString))
@@ -79,12 +80,26 @@ namespace Data
                 con.Open();
                 string query = "INSERT INTO avaliacoes (nome, cidade, estado, tipo, _data) VALUES (@nome, @cidade, @estado, @tipo, GetDate())";
                 SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@nome", avaliacao.nome);
-                cmd.Parameters.AddWithValue("@cidade", avaliacao.cidade);
-                cmd.Parameters.AddWithValue("@estado", avaliacao.estado);
-                cmd.Parameters.AddWithValue("@tipo", avaliacao.tipo);
-                cmd.Parameters.AddWithValue("@_data", today);
-                cmd.ExecuteNonQuery();
+
+
+                try
+                {
+                    _sqlConnection.Open();
+                    cmd.Parameters.AddWithValue("@nome", avaliacao.nome);
+                    cmd.Parameters.AddWithValue("@cidade", avaliacao.cidade);
+                    cmd.Parameters.AddWithValue("@estado", avaliacao.estado);
+                    cmd.Parameters.AddWithValue("@tipo", avaliacao.tipo);
+                    cmd.Parameters.AddWithValue("@_data", today);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    _sqlConnection.Close();
+                }
             }
         }
 

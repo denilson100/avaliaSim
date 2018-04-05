@@ -26,9 +26,10 @@ namespace AvaliaSimWebApi.Controllers
         }
 
         // POST: api/Avaliacao
-        public void Post([FromBody]Avaliacao avaliacao)
+        [HttpPost]
+        public void Post([FromBody]AddAvaliacao value)
         {
-            _avaliacaoRepositorio.AddAvaliacao(avaliacao);
+            _avaliacaoRepositorio.AddAvaliacao(value);
         }
 
         // PUT: api/Avaliacao/5

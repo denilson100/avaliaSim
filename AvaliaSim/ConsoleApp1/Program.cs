@@ -82,30 +82,30 @@ namespace ConsoleApp1
 
         private static void criar()
         {
-            Avaliacao avaliacao = new Avaliacao();
+            AddAvaliacao avaliacao = new AddAvaliacao();
 
             Console.Write("Digite [ 1 ] para Produto e [ 2 ] para Serviço: ");
             int tipo = Int32.Parse(Console.ReadLine());
 
             if (tipo == 1)
             {
-                Console.Write("Nome:");
+                Console.Write("Nome: ");
                 avaliacao.nome = Console.ReadLine();
-                Console.Write("Cidade:");
+                Console.Write("Cidade: ");
                 avaliacao.cidade = Console.ReadLine();
-                Console.Write("Estado:");
+                Console.Write("Estado (Ex: RJ): ");
                 avaliacao.estado = Console.ReadLine();
                 avaliacao.tipo = "Produto";
             }
             else
             {
-                Console.Write("Nome:");
+                Console.Write("Nome: ");
                 avaliacao.nome = Console.ReadLine();
-                Console.Write("Cidade:");
+                Console.Write("Cidade: ");
                 avaliacao.cidade = Console.ReadLine();
-                Console.Write("Estado:");
+                Console.Write("Estado (Ex: RJ): ");
                 avaliacao.estado = Console.ReadLine();
-                avaliacao.tipo = "Servico";
+                avaliacao.tipo = "Serviço";
             }
 
             ConsumeEventSync syncAdd = new ConsumeEventSync();
@@ -118,11 +118,11 @@ namespace ConsoleApp1
             Avaliacao avaliacao = new Avaliacao();
             Console.Write("Digite o id da Avaliação: ");
             int id = Int32.Parse(Console.ReadLine());
-            Console.Write("Novo nome:");
+            Console.Write("Novo nome: ");
             avaliacao.nome = Console.ReadLine();
-            Console.Write("Nova cidade:");
+            Console.Write("Nova cidade: ");
             avaliacao.cidade = Console.ReadLine();
-            Console.Write("Novo estado (ex: RJ):");
+            Console.Write("Novo estado (ex: RJ): ");
             avaliacao.estado = Console.ReadLine();
 
             ConsumeEventSync syncEdit = new ConsumeEventSync();

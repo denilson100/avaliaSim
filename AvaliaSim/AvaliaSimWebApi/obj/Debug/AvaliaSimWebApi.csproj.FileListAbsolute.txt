@@ -89,3 +89,5 @@ C:\Users\denilson\Desktop\dNOT\ProjetoBloco\avaliaSim1\AvaliaSim\AvaliaSimWebApi
 C:\Users\denilson\Desktop\dNOT\ProjetoBloco\avaliaSim1\AvaliaSim\AvaliaSimWebApi\bin\ru\System.Spatial.resources.dll
 C:\Users\denilson\Desktop\dNOT\ProjetoBloco\avaliaSim1\AvaliaSim\AvaliaSimWebApi\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\denilson\Desktop\dNOT\ProjetoBloco\avaliaSim1\AvaliaSim\AvaliaSimWebApi\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\denilson\Desktop\dNOT\ProjetoBloco\avaliaSim1\AvaliaSim\AvaliaSimWebApi\bin\Data.dll.config
+C:\Users\denilson\Desktop\dNOT\ProjetoBloco\avaliaSim1\AvaliaSim\AvaliaSimWebApi\bin\DomainModel.dll.config

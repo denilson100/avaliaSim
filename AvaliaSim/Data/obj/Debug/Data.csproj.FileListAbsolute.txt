@@ -6,3 +6,5 @@ C:\Users\denilson\Desktop\dNOT\ProjetoBloco\avaliaSim1\AvaliaSim\Data\obj\Debug\
 C:\Users\denilson\Desktop\dNOT\ProjetoBloco\avaliaSim1\AvaliaSim\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
 C:\Users\denilson\Desktop\dNOT\ProjetoBloco\avaliaSim1\AvaliaSim\Data\obj\Debug\Data.dll
 C:\Users\denilson\Desktop\dNOT\ProjetoBloco\avaliaSim1\AvaliaSim\Data\obj\Debug\Data.pdb
+C:\Users\denilson\Desktop\dNOT\ProjetoBloco\avaliaSim1\AvaliaSim\Data\bin\Debug\Data.dll.config
+C:\Users\denilson\Desktop\dNOT\ProjetoBloco\avaliaSim1\AvaliaSim\Data\bin\Debug\DomainModel.dll.config
