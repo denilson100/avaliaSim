@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AvaliaSim.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -7,7 +8,7 @@ using System.Web;
 
 namespace AvaliaSim.Repository
 {
-    public class AvaliacaoRepository
+    public class AvaliacaoRepository : IAvaliacaoRepositorio
     {
         SqlConnection connection;
 
@@ -347,6 +348,33 @@ namespace AvaliaSim.Repository
 
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        // ***** API  *****//
+
+        public IEnumerable<Avaliacao> GetAll()
+        {
+            return GetAllAvaliacoes();
+        }
+
+        public Avaliacao Get(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Avaliacao Add(Avaliacao item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Remove(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Update(Avaliacao item)
+        {
+            throw new NotImplementedException();
         }
 
         /*

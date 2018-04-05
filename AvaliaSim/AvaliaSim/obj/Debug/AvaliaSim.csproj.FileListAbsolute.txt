@@ -74,3 +74,4 @@ C:\Users\denilson\Desktop\dNOT\ProjetoBloco\avaliaSim1\AvaliaSim\AvaliaSim\bin\M
 C:\Users\denilson\Desktop\dNOT\ProjetoBloco\avaliaSim1\AvaliaSim\AvaliaSim\obj\Debug\AvaliaSim.csproj.CoreCompileInputs.cache
 C:\Users\denilson\Desktop\dNOT\ProjetoBloco\avaliaSim1\AvaliaSim\AvaliaSim\obj\Debug\AvaliaSim.dll
 C:\Users\denilson\Desktop\dNOT\ProjetoBloco\avaliaSim1\AvaliaSim\AvaliaSim\obj\Debug\AvaliaSim.pdb
+C:\Users\denilson\Desktop\dNOT\ProjetoBloco\avaliaSim1\AvaliaSim\AvaliaSim\obj\Debug\AvaliaSim.csprojResolveAssemblyReference.cache
