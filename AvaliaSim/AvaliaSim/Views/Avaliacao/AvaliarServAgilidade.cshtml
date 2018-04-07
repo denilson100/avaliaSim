@@ -2,46 +2,51 @@
 @{
     ViewBag.Title = "Agilidade";
 }
-<h2>Agilidade</h2>
-<p>@Model.nome</p>
-<p>@Model.cidade</p>
+<div class="container" style="background: #FFF;">
+    <div class="col-md-6 col-md-offset-3" style="background:#31A056; color: #fff; margin-top:30px;">
+        <h2 style="text-align:center;">Agilidade</h2>
+        <hr style="border-color: 1px solid #004c00;" />
+        <p style="text-align:center;">Serviço: @Model.nome</p>
+        <p style="text-align:center;">Cidade: <b> @Model.cidade</b></p>
+    </div>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <hr />
+        <div class="col-md-6 col-md-offset-3" style="border: 1px solid #31A056; margin-bottom:30px;">
 
-        <fieldset data-role="controlgroup">
-            <div>
-                <input type="hidden" id="teste" name="id" value="@Model.Id">
-                <input type="radio" name="recebeOpcao" id="radio-choice-v-2a" value="1">
-                <label for="radio-choice-v-2a">Bom</label>
-            </div>
-
-            <div>
-                <input type="hidden" id="teste2" name="id" value="@Model.Id">
-                <input type="radio" name="recebeOpcao" id="radio-choice-v-2b" value="2">
-                <label for="radio-choice-v-2b">Neutro</label>
-            </div>
-
-            <div>
-                <input type="hidden" id="teste3" name="id" value="@Model.Id">
-                <input type="radio" name="recebeOpcao" id="radio-choice-v-2c" value="3">
-                <label for="radio-choice-v-2c">Ruim</label>
-            </div>
-        </fieldset>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+            <fieldset data-role="controlgroup" style="margin-top:20px;">
+                <div style="float:left;">
+                    <input type="hidden" id="teste" name="id" value="@Model.Id">
+                    <input type="radio" name="recebeOpcao" id="radio-choice-v-2a" value="1">
+                    <img src="~/imagens/moji-bom.png" /><br />
+                    <label for="radio-choice-v-2a" style="margin:0 0 0 25px;">  Ótimo</label>
+                </div>
+                <div style="float:left; margin:0 165px;">
+                    <input type="hidden" id="teste2" name="id" value="@Model.Id">
+                    <input type="radio" name="recebeOpcao" id="radio-choice-v-2b" value="2">
+                    <img src="~/imagens/moji-normal.png" /> <br />
+                    <label for="radio-choice-v-2b" style="margin:0 0 0 25px;"> Bom</label>
+                </div>
+                <div style="float:left;">
+                    <input type="hidden" id="teste3" name="id" value="@Model.Id">
+                    <input type="radio" name="recebeOpcao" id="radio-choice-v-2c" value="3">
+                    <img src="~/imagens/moji-ruim.png" /><br />
+                    <label for="radio-choice-v-2c" style="margin:0 0 0 25px;">  Ruim</label>
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <div>
+                    <input type="submit" value="Avaliar" class="btn btn-block" style="background: #004c00; color: #fff; margin:40px auto;" />
+                </div>
             </div>
         </div>
+
+    }
+    <div>
+        @Html.ActionLink("Voltar para Avaliações", "GetAllAvaliacoes")
     </div>
-}
-<div>
-    @Html.ActionLink("Voltar para Avaliações", "GetAllAvaliacoes")
 </div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

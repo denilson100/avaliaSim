@@ -2,55 +2,63 @@
 @{
     ViewBag.Title = "Adicionar";
 }
-<h2>Criar Avaliação</h2>
+<div class="container" style="background: #FFF;">
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+    <div class="col-md-6 col-md-offset-3" style="background:#31A056; color: #fff; margin-top:30px;">
+        <h2 style="text-align:center;">Criar Avaliação</h2>
+        <hr style="border-color: 1px solid #004c00;" />
 
-    <div class="form-horizontal">
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.cidade, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.cidade, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.cidade, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.estado, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.estado,
-                    new SelectList(Enum.GetValues(typeof(Estado))),
-                    "Selecione um Estado")
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.tipo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.tipo,
-                    new SelectList(Enum.GetValues(typeof(Tipo))),
-                    "Selecione um Tipo")
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
     </div>
-}
-<div>
-    @Html.ActionLink("Voltar para Home", "GetAllAvaliacoes")
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="col-md-6 col-md-offset-3" style="border: 1px solid #31A056; margin-bottom:30px; padding-top:20px;">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br /><br />
+            <div class="form-group">
+                @Html.LabelFor(model => model.cidade, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.cidade, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.cidade, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br /><br />
+            <div class="form-group">
+                @Html.LabelFor(model => model.estado, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.estado,
+                             new SelectList(Enum.GetValues(typeof(Estado))),
+                             "Selecione um Estado")
+                </div>
+            </div>
+            <br /><br />
+            <div class="form-group">
+                @Html.LabelFor(model => model.tipo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.tipo,
+                             new SelectList(Enum.GetValues(typeof(Tipo))),
+                             "Selecione um Tipo")
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Criar Avaliação" class="btn btn-block" style="background:#004c00; color: #fff; margin:20px 0;" />
+                </div>
+            </div>
+        </div>
+    }
+    <div>
+        @Html.ActionLink("Voltar para Home", "GetAllAvaliacoes")
+    </div>
 </div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

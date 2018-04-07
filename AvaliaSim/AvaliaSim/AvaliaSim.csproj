@@ -233,6 +233,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="imagens\avaliasim.png" />
+    <Content Include="imagens\bg.png" />
+    <Content Include="imagens\moji-bom.png" />
+    <Content Include="imagens\moji-normal.png" />
+    <Content Include="imagens\moji-ruim.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\esm\popper-utils.js" />

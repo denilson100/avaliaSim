@@ -7,41 +7,56 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top" style="border-bottom: 5px solid #004B47; background: #fff; padding:20px 0 5px 0;">
+<body style="background-image:url(../../imagens/bg.png);">
+    <div class="navbar navbar-inverse navbar-fixed-top container-fluid" style="border-bottom: 5px solid #004B47; background: #fff; padding:20px 0 5px 0;">
         <div class="container" style="font-size: 18px;">
-            <div class="navbar-header">
+            <div class="navbar-header col-md-3">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <img src="~/images/avaliasim.png" width="50%" onclick="" />
+                <a>
+                    <img src="~/imagens/avaliasim.png" width="50%" onclick="" />
+                </a>
             </div>
-            <div class="navbar-collapse collapse" style="margin-top: 50px; color: #004B47;">
+            <div class="navbar-collapse collapse col-md-2" style="margin-top: 50px; margin-left:-50px; color: #004B47;">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Listar", "GetAllAvaliacoes", "Avaliacao")</li>
-                    <li>@Html.ActionLink("Criar Avaliação", "Create", "Avaliacao")</li>
+                    <li title="Listar Avaliação" style="margin-top:15px;">
+                        @Html.ActionLink(" ", "GetAllAvaliacoes", "Avaliacao", routeValues: null, htmlAttributes: new { @class = "glyphicon glyphicon-th-list" })
+                    </li>
+                    <li title="Criar uma avaliação" style="margin-top:15px;">
+                        @Html.ActionLink(" ", "Create", "Avaliacao", routeValues: null, htmlAttributes: new { @class = "glyphicon glyphicon-plus-sign", id = "registerLink" })
+
+
+
+                    </li>
                     @using (Html.BeginForm("ListBuscaPorNome", "Avaliacao", null, FormMethod.Post, new { @class = "navbar-form navbar-left", role = "search" }))
                     {
-                        <div class="form-group">
-                            <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome">
+                        <div class="form-group" style="z-index:9999999; width:400px;">
+                            <input type="text" id="nome" name="nome" class="form-control form-control-lg" placeholder="O que você quer Avaliar?" style="height:47px; border-color: #004B47; ">
+                            <button type="submit" class="btn btn-secondary" style="margin-left:-11px; background: #004B47; color:#fff;"><span class="glyphicon glyphicon-search"></span></button>
                         </div>
-                        <button type="submit" class="btn btn-default">Buscar</button>
+
+
+
                     }
                 </ul>
+
+
 
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
 
-    <div class="container body-content">
+    <div class="container body-content" style="margin-top:70px;">
         @RenderBody()
-        <hr />
-        <footer style="background: #004B47; color: #fff; padding:30px; float:left; width: 100%; z-index:99999;">
-            <p>AvaliaSim &copy; @DateTime.Now.Year Todos os direitos reservados.</p>
+
+        <footer class="container" style="background: #004B47; color: #fff; padding:30px; float:left; z-index:99999;">
+            <p style="text-align:center;">AvaliaSim &copy; @DateTime.Now.Year Todos os direitos reservados.</p>
         </footer>
+
     </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
