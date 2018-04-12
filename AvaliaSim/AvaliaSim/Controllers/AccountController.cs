@@ -79,7 +79,10 @@ namespace AvaliaSim.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    //###### Logado com Sucesso pelo Identity, Entrar no Domínio #########
+                    Session["UserEmail"] = model.Email;
+                    //####################################################################
+                    return RedirectToAction("Details", "Profiles");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -163,7 +166,7 @@ namespace AvaliaSim.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Create", "Profiles");
                 }
                 AddErrors(result);
             }

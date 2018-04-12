@@ -55,6 +55,9 @@
   <ItemGroup>
     <Compile Include="AddAvaliacao.cs" />
     <Compile Include="Avaliacao.cs" />
+    <Compile Include="Entities\Profile.cs" />
+    <Compile Include="interfaces\Repositories\IProfileRepository.cs" />
+    <Compile Include="interfaces\Services\IProfileServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
